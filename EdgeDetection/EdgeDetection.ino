@@ -2,8 +2,9 @@
 
 const int BUTTON_PIN = 6;
 const int LED_PIN = 12;
-const int INITIAL_INTERVAL = 1000;
-const int MIN_INTERVAL = 50;
+const int INITIAL_INTERVAL = 2048;
+const int MIN_INTERVAL = 16;
+const int READ_DELAY = 50;
 
 int interval = INITIAL_INTERVAL;
 bool lastButtonState = HIGH;
@@ -31,8 +32,8 @@ void loop() {
     timePassed = 0;
   }
 
-  timePassed += MIN_INTERVAL;
-  delay(MIN_INTERVAL);
+  timePassed += READ_DELAY;
+  delay(READ_DELAY);
 }
 
 void toggleLed() {
